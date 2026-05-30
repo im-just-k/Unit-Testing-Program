@@ -3,31 +3,36 @@ import unittest # Imports unittest library
 from math_operations import add, subtract, multiply, divide # Imports functions from the "math_operations.py" file
 
 class TestMathOperations(unittest.TestCase):
-    # Test add function
+    
+    # Test the add function
     def test_add(self):
         """Test the addition of two numbers."""
         self.assertEqual(add(3, 2), 5)
         self.assertEqual(add(-1, 1), 0)
         self.assertEqual(add(-2, -3), -5)
-    # Test subtract function
+    
+    # Test the subtract function
     def test_subtract(self):
         """Test the subtraction of two numbers."""
         self.assertEqual(subtract(3, 2), 1)
         self.assertEqual(subtract(5, 10), -5)
         self.assertEqual(subtract(-2, -3), 1)
-    # Test multiply function
+   
+    # Test the multiply function
     def test_multiply(self):
         """Test the multiplication of two numbers."""
         self.assertEqual(multiply(3, 2), 6)
         self.assertEqual(multiply(-1, 5), -5)
         self.assertEqual(multiply(0, 10), 0)
-    # Test divide function
+    
+    # Test the divide function
     def test_divide(self):
         """Test the division of two numbers."""
         self.assertEqual(divide(6, 2), 3)
         self.assertEqual(divide(5, 2), 2.5)
         self.assertRaises(ValueError, divide, 5, 0)  # Test division by zero
-
+    
+    # Test the divide function for edge cases; eg. dividing by a small decimal number
     def test_divide_edge_case(self):
         """Test division when dividing by a very small number."""
         self.assertAlmostEqual(divide(1, 0.0001), 10000)
